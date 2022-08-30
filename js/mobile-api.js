@@ -13,6 +13,8 @@ const loadPhone = async(searchText) => {
 
 const displayPhones = phones => {
     const phoneContainer = document.getElementById('phones-container');
+    phoneContainer.textContent = '';
+    phones = phones.slice(0, 15);
     phones.forEach(phone => {
      const phoneDiv = document.createElement('div');
      phoneDiv.classList.add('col');
@@ -30,11 +32,11 @@ const displayPhones = phones => {
     });
 }
 
-// added to event handler with search button and get your choise
+//added to event handler with search button and get your choise
 document.getElementById('search-phone').addEventListener('click', function(){
     const searchInputField = document.getElementById('search-field');
     const searchText = searchInputField.value;
-    loadPhone(searchText);
+    loadPhone(searchText)
 })
 // here call load function and upload phone 
 loadPhone();

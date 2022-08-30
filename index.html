@@ -11,16 +11,13 @@
 
   </head>
   <body>
-  <header>
-
+  <header class="text-center">
     <!-- navbar-area start -->
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <a class="navbar-brand" href="#">Mobile Hunter</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -28,31 +25,32 @@
               <a class="nav-link text-black active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-black" href="#">Blog</a>
+              <a class="nav-link text-black" href="#">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-black">Contact Us</a>
             </li>
           </ul>
-          <!-- searching-area start  -->
-          <form class="d-flex" role="search">
-            <input id="search-field" class="form-control me-2" type="search" placeholder="Search your phone">
-            <button id="search-phone" class="btn btn-outline-success">Search</button>
-          </form>
-          <!-- searching-area end  -->
+          <div class="d-flex">
+            <input id="search-field" type="email" class="form-control me-2" id="exampleFormControlInput1" placeholder="search your phone">
+            <button id="search-phone" class="btn btn-primary">Search</button>
+          </div>
         </div>
       </div>
     </nav>
     <!-- navbar-area end -->
   </header>
+  <!-- start-main area here  -->
   <main>
-    <!-- card-section start  -->
+    <!-- card-section start here  -->
     <section class="container py-4">
-      <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4">      
+      <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4">
+
       </div>
     </section>
-    <!-- card-section end  -->
+    <!-- card-section end here  -->
   </main>
+  <!-- end-main area here  -->
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 
