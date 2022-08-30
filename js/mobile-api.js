@@ -14,12 +14,24 @@ const loadPhone = async(searchText) => {
 const displayPhones = phones => {
     const phoneContainer = document.getElementById('phones-container');
     phoneContainer.textContent = '';
+
+    //display first 15 phone
     phones = phones.slice(0, 15);
+
+    //when not foun phone show alert sms
+    const notFoundAlert = document.getElementById('NotFound-alert')
+    if(phones.length === 0){
+        notFoundAlert.classList.remove('d-none')
+    }else{
+        notFoundAlert.classList.add('d-none')
+    }
+
+    //query found product data here 
     phones.forEach(phone => {
      const phoneDiv = document.createElement('div');
      phoneDiv.classList.add('col');
      phoneDiv.innerHTML =`
-        <div class="card shadow-lg border-0 position-relative">
+        <div class="card h-100 shadow-lg border-0 position-relative">
         <img src="${phone.image}" class="card-img-top p-4" alt="...">
         <div class="card-body">
         <h5 class="card-title">${phone.phone_name}</h5>
@@ -36,7 +48,7 @@ const displayPhones = phones => {
 document.getElementById('search-phone').addEventListener('click', function(){
     const searchInputField = document.getElementById('search-field');
     const searchText = searchInputField.value;
-    loadPhone(searchText)
+    loadPhone(searchText);
 })
 // here call load function and upload phone 
-loadPhone();
+// loadPhone();
