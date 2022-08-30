@@ -1,8 +1,8 @@
 // this function get api to data by fetech by loadphone function
 
 
-const loadPhone = async() => {
-    const url = `https://openapi.programming-hero.com/api/phones?search=iphone`;
+const loadPhone = async(searchText) => {
+    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     const response = await fetch(url);
     const data = await response.json();
     displayPhones(data.data);
@@ -29,5 +29,12 @@ const displayPhones = phones => {
      phoneContainer.appendChild(phoneDiv);
     });
 }
+
+// added to event handler with search button and get your choise
+document.getElementById('search-phone').addEventListener('click', function(){
+    const searchInputField = document.getElementById('search-field');
+    const searchText = searchInputField.value;
+    loadPhone(searchText);
+})
 // here call load function and upload phone 
 loadPhone();
