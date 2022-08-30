@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Bank-deposit site</title>
+    <!------ tailwind css cdn ----->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    <!-- start header-area  -->
+    <header class="container mx-auto text-center">
+        <h1 class="text-4xl font-semibold mt-8 mb-8">Welcome to My <span class="text-blue-600">Deposit Bank</span>!!!</h1>
+    </header>
+    <!-- end header-area  -->
+    <!-- main start  -->
+    <main>
+        <!-- login-section start  -->
+        <section class="bg-emerald-100 w-9/12 mx-auto p-8">
+            <h3 class="text-2xl font-semibold mb-3">Please Login</h3>
+            <input class="w-9/12 block mb-3 rounded-sm px-3 py-2" type="email" name="" id="user-email" placeholder="Please type your email address">
+            <input class="w-9/12 block mb-3 rounded-sm px-3 py-2" type="password" name="" id="user-password" placeholder="Please enter your password">
+            <button id="submit-btn" class="text-xl font-medium bg-amber-600 text-white px-8 py-1 rounded-lg hover:bg-sky-400" type="submit">Submit</button>
+        </section>
+        <!-- login-section end  -->
+    </main>
+    <!-- main end  -->
+
+
+    <!------- login-js file -------->
+    <script src="js/login.js"></script>
+</body>
+</html>

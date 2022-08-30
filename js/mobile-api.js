@@ -116,6 +116,10 @@ document.getElementById('show-All').addEventListener('click', function(){
     processSearch();
 });
 
+// add to event handler with add to card 
+document.getElementById('add-To-Card').addEventListener('click', function(){
+    window.location.href = 'login.html';
+})
 
 
 // here call load function and upload phone 

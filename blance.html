@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blance info</title>
+    <!------ tailwind css cdn ----->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+    <!-- start header-area  -->
+    <header class="container mx-auto text-center">
+        <h1 class="text-4xl font-semibold mt-8 mb-8">Let's get some <span class="text-blue-600"> Money</span>!!!</h1>
+    </header>
+    <!-- end header-area  -->
+    <!------ main-area start ------->
+    <!-- balance-information -->
+    <section class="blance-info-section">
+        <div class="container">
+            <article class="grid grid-cols-3 gap-4 w-9/12 mx-auto text-white mb-8">
+                <!------ deposti-card -------->
+                <div class="bg-green-300 p-8 rounded-lg">
+                    <h4 class="text-2xl font-medium">Deposit</h4>
+                    <h2 class="text-5xl">$<span id="deposit-Total">00</span></h2>
+                </div>
+                <!------ withdraw-card -------->
+                <div class="bg-amber-500 p-8 rounded-lg">
+                    <h4 class="text-2xl font-medium">withdraw</h4>
+                    <h2 class="text-5xl">$<span id="withdraw-total">00</span></h2>
+                </div>
+                <!------ blance-card -------->
+                <div class="bg-red-400 p-8 rounded-lg">
+                    <h4 class="text-2xl font-medium">Balance</h4>
+                    <h2 class="text-5xl">$<span id="total-balance">1240</span></h2>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- balance-information -->
+    <!-- deposti-information  start-->
+    <section class="diposit-info-section">
+      <div class="container">
+          <article class="grid grid-cols-2 gap-4 w-9/12 mx-auto text-white">
+              <!------ deposti-card -------->
+              <div class="bg-fuchsia-400 p-8 rounded-lg">
+                  <h4 class="text-3xl mb-4">Please Deposit</h4>
+                  <input class="w-9/12 block mb-3 rounded-sm px-3 py-2  text-black font-medium" type="text" name="" id="deposit-field" placeholder="$ Amount you want to deposit">
+                  <button id="deposit-btn" class="text-xl font-semibold bg-amber-600 text-white px-8 py-2 rounded-lg hover:bg-sky-800" type="submit">Deposit</button>
+              </div>
+              <!------ withdraw-card -------->
+              <div class="bg-sky-400 p-8 rounded-lg">
+                  <h4 class="text-3xl mb-4">withdraw</h4>
+                  <input class="w-9/12 block mb-3 rounded-sm px-3 py-2  text-black font-medium" type="email" name="" id="withdraw-field" placeholder="$ Amount you want to withdraw">
+                  <button id="withdraw-btn" class="text-xl font-semibold bg-sky-800 text-white px-8 py-2 rounded-lg hover:bg-amber-600" type="submit">Withdraw</button>
+              </div>
+          </article>
+      </div>
+  </section>
+    <!-- deposti-information  end-->
+    <!------ main-area end ------->
+
+    <!------ js file ---->
+    <script src="js/common.js"></script>
+    <script src="js/deposit.js"></script>
+    <script src="js/withdraw.js"></script>
+</body>
+</html>
