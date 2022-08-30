@@ -42,13 +42,27 @@ const displayPhones = phones => {
      `;
      phoneContainer.appendChild(phoneDiv);
     });
+
+    // stop loading spinner
+    togggleLoadSpinner(false);
 }
 
 //added to event handler with search button and get your choise
 document.getElementById('search-phone').addEventListener('click', function(){
+    // starting loading spinner 
+    togggleLoadSpinner(true)
     const searchInputField = document.getElementById('search-field');
     const searchText = searchInputField.value;
     loadPhone(searchText);
 })
+
+const togggleLoadSpinner = isLoading => {
+    const loadingSpinner = document.getElementById('loding-spinner');
+    if(isLoading){
+        loadingSpinner.classList.remove('d-none');
+    }else{
+        loadingSpinner.classList.add('d-none');
+    }
+}
 // here call load function and upload phone 
 // loadPhone();
