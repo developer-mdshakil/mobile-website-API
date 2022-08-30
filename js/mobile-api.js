@@ -1,22 +1,28 @@
 // this function get api to data by fetech by loadphone function
 
 
-const loadPhone = async(searchText) => {
+const loadPhone = async(searchText, datalimit) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     const response = await fetch(url);
     const data = await response.json();
-    displayPhones(data.data);
+    displayPhones(data.data, datalimit);
 }
 
 
 //desplay phone website by functin
 
-const displayPhones = phones => {
+const displayPhones = (phones, datalimit) => {
     const phoneContainer = document.getElementById('phones-container');
     phoneContainer.textContent = '';
 
     //display first 15 phone
-    phones = phones.slice(0, 15);
+    const showAll = document.getElementById('show-All')
+    if(datalimit && phones.length > 15){
+        phones = phones.slice(0, 15);
+        showAll.classList.remove('d-none');
+    }else{
+        showAll.classList.add('d-none');
+    };
 
     //when not foun phone show alert sms
     const notFoundAlert = document.getElementById('NotFound-alert')
@@ -49,12 +55,16 @@ const displayPhones = phones => {
 
 //added to event handler with search button and get your choise
 document.getElementById('search-phone').addEventListener('click', function(){
-    // starting loading spinner 
-    togggleLoadSpinner(true)
-    const searchInputField = document.getElementById('search-field');
-    const searchText = searchInputField.value;
-    loadPhone(searchText);
+    processSearch(15);
 })
+//create a processing funtcion here 
+const processSearch = (datalimit) => {
+     // starting loading spinner 
+     togggleLoadSpinner(true)
+     const searchInputField = document.getElementById('search-field');
+     const searchText = searchInputField.value;
+     loadPhone(searchText, datalimit);
+}
 
 const togggleLoadSpinner = isLoading => {
     const loadingSpinner = document.getElementById('loding-spinner');
@@ -66,3 +76,9 @@ const togggleLoadSpinner = isLoading => {
 }
 // here call load function and upload phone 
 // loadPhone();
+
+
+// here add to event handler with show all button
+document.getElementById('show-All').addEventListener('click', function(){
+    processSearch();
+})
