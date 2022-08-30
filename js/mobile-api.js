@@ -76,6 +76,7 @@ const displayPhoneDetails = phone => {
     <p>Chip-set: ${phone.mainFeatures.chipSet? phone.mainFeatures.chipSet : 'Not found'}</p>
     <p>Storage: ${phone.mainFeatures.storage? phone.mainFeatures.storage : 'Not found'}</p>
     <p>Release-date: ${phone.releaseDate? phone.releaseDate : 'Not found'}</p>
+    <p>Sensors: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors[0] : 'No found'}
     `;
 }
 
